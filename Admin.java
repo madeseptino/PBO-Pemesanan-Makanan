@@ -37,6 +37,7 @@ public class Admin {
             int pilihan = input.nextInt();
             switch (pilihan) {
                 case 1 :
+                    Server.lihatCabang();
                     break;
                 case 2 :
                     tambahCabang();
@@ -65,10 +66,19 @@ public class Admin {
         System.out.print("Masukan Alamat Cabang : ");
         String alamatCabang = input.nextLine();
         System.out.print("Masukan Banyak Menu Cabang : ");
-        String menuCabang = input.nextLine();
+        int menuCabang = Integer.parseInt(input.nextLine());
+
+        Server listCabang = new Server(kodeCabang,namaCabang,alamatCabang);
+        Server.tambahCabang(listCabang);
     }
 
-    public static void deleteCabang(){
-        System.out.println("Hapus juga sendiri");
+    public static void hapusCabang(){
+        if (Server.lihatCabang() !=0) {
+            System.out.print("\nMasukan ID Cabang yang ingin dihapus :");
+            int index = Integer.parseInt(input.nextLine());
+            Server.hapusCabang(index);
+        }
+        System.out.println("Cabang Berhasil Dihapus!");
+        menuAdmin();
     }
 }

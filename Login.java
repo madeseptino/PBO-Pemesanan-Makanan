@@ -8,7 +8,7 @@ public class Login {
 
     public static void login(){
         Scanner scanner = new Scanner(System.in);
-
+        System.out.println("Selamat Datang di Asep Ice Cream! Silahkan Login Dahulu!");
         System.out.println("1. Admin");
         System.out.println("2. Customer");
         System.out.println("3. Keluar Program");

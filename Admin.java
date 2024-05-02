@@ -43,7 +43,7 @@ public class Admin {
                     tambahCabang();
                     break;
                 case 3 :
-                    deleteCabang();
+                    hapusCabang();
                     break;
                 case 4 :
                     Login.login();
@@ -70,6 +70,21 @@ public class Admin {
 
         Server listCabang = new Server(kodeCabang,namaCabang,alamatCabang);
         Server.tambahCabang(listCabang);
+
+        System.out.println("\n\t\t\tMenu Ice Cream");
+        System.out.println("Masukan Info Menu Sesuai Dengan Jumlah Banyak Menu!");
+        for (int i = 0; i < menuCabang; i++) {
+            System.out.print("Masukan Kode Menu : ");
+            String idMenu = input.nextLine();
+            System.out.print("Masukan Nama Menu : ");
+            String namaMenu = input.nextLine();
+            System.out.print("Masukan Harga Menu : ");
+            String hargaMenu = input.nextLine();
+
+            listCabang.tambahMenu(idMenu, namaMenu, hargaMenu);
+        }
+        System.out.println("Cabang Berhasil Ditambahkan!");
+        menuAdmin();
     }
 
     public static void hapusCabang(){

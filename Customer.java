@@ -26,11 +26,15 @@ public class Customer {
 
         int ulang = 1;
         do {
-            System.out.println("Menu Customer : ");
-            System.out.println("1. Lihat Cabang Toko");
-            System.out.println("2. Buat Pesanan");
-            System.out.println("3. Lihat Pesanan");
-            System.out.println("4. Kembali Ke Beranda");
+            System.out.println("=============================================================");
+            System.out.println("|                 Selamat Datang Customer!                  |");
+            System.out.println("=============================================================");
+            System.out.println("|1. Lihat Cabang Toko");
+            System.out.println("|2. Buat Pesanan");
+            System.out.println("|3. Lihat Pesanan");
+            System.out.println("|4. Kembali Ke Beranda");
+            System.out.println("=============================================================");
+            System.out.print("Masukan Pilihan Anda : ");
             int pilihan = input.nextInt();
             switch (pilihan) {
                 case 1 :
@@ -40,7 +44,7 @@ public class Customer {
                     tambahPesanan();
                     break;
                 case 3 :
-
+                    lihatPesanan();
                     break;
                 case 4 :
                     Login.login();
@@ -56,10 +60,10 @@ public class Customer {
     }
 
     public static void tambahPesanan() {
+        Scanner scanner = new Scanner(System.in);
+
         // Tampilkan daftar cabang yang tersedia
         Server.lihatCabang();
-
-        Scanner scanner = new Scanner(System.in);
 
         System.out.print("Pilih Cabang : ");
         String cabangTertuju = scanner.nextLine();
@@ -73,7 +77,6 @@ public class Customer {
         }
 
         if (cabangTerpilih != null) {
-            // Tampilkan menu dari cabang yang dipilih
             ArrayList<String> menu = cabangTerpilih.getMenu();
             ArrayList<Double> harga = cabangTerpilih.getHarga();
 
@@ -82,7 +85,6 @@ public class Customer {
                 System.out.println((i + 1) + ". " + menu.get(i) + "Rp" + harga.get(i));
             }
 
-            // Memilih menu dan membuat pesanan
             ArrayList<String> cartMenu = new ArrayList<>();
             ArrayList<Double> cartHarga = new ArrayList<>();
             boolean lanjutOrder = true;
@@ -103,7 +105,6 @@ public class Customer {
                 lanjutOrder = jawaban.equalsIgnoreCase("y");
             }
 
-            // Menampilkan pesanan yang dibuat dan total harga
             System.out.println("Pesanan Anda : ");
             double totalHarga = 0;
             for (int i = 0; i < cartMenu.size(); i++) {
@@ -118,28 +119,28 @@ public class Customer {
 
 
 
-
-//    public static void lihatPesanan (){
-//        System.out.println(listCabang.size());
-//        ArrayList kodeCabang = new ArrayList<>();
-//        ArrayList cabangName = new ArrayList<>();
-//        ArrayList cabangAddress = new ArrayList<>();
-//        for (int i =0; i < listCabang.size(); i++) {
-//            StringTokenizer stringtok = new StringTokenizer(
-//                    listCabang.toArray()[i].toString().replace("[","").replace("]",""), ",");
-//            kodeCabang.add(stringtok.nextToken());
-//            cabangName.add(stringtok.nextToken());
-//            cabangAddress.add(stringtok.nextToken());
-//        }
-//        for (int j = 0; j < kodeCabang.size(); j++) {
-//            System.out.print("Index : ");
-//            System.out.println(j);
-//            System.out.print("ID Cabang : ");
-//            System.out.println(kodeCabang.toArray()[j].toString().replace("[", "").replace("]", ""));
-//            System.out.print("Nama Cabang : ");
-//            System.out.println(cabangName.toArray()[j].toString().replace("[", "").replace("]", ""));
-//            System.out.print("Alamat Cabang : ");
-//            System.out.println(cabangAddress.toArray()[j].toString().replace("[", "").replace("]", ""));
-//        }
-//    }
+    public static void lihatPesanan (){
+        Server server = new Server(1, "Nama Default", "Alamat Default");
+        System.out.println(server.listCabang.size());
+        ArrayList kodeCabang = new ArrayList<>();
+        ArrayList cabangName = new ArrayList<>();
+        ArrayList cabangAddress = new ArrayList<>();
+        for (int i =0; i < server.listCabang.size(); i++) {
+            StringTokenizer stringtok = new StringTokenizer(
+                    server.listCabang.toArray()[i].toString().replace("[","").replace("]",""), ",");
+            kodeCabang.add(stringtok.nextToken());
+            cabangName.add(stringtok.nextToken());
+            cabangAddress.add(stringtok.nextToken());
+        }
+        for (int j = 0; j < kodeCabang.size(); j++) {
+            System.out.print("Index : ");
+            System.out.println(j);
+            System.out.print("ID Cabang : ");
+            System.out.println(kodeCabang.toArray()[j].toString().replace("[", "").replace("]", ""));
+            System.out.print("Nama Cabang : ");
+            System.out.println(cabangName.toArray()[j].toString().replace("[", "").replace("]", ""));
+            System.out.print("Alamat Cabang : ");
+            System.out.println(cabangAddress.toArray()[j].toString().replace("[", "").replace("]", ""));
+        }
+    }
 }

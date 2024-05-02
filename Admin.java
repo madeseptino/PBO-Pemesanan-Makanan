@@ -27,13 +27,15 @@ public class Admin {
 
         int ulang = 1;
         do {
-            System.out.println("Selamat Datang Admin!");
-            System.out.println("Menu Admin : ");
-            System.out.println("1. Lihat Cabang");
-            System.out.println("2. Tambah Cabang");
-            System.out.println("3. Hapus Cabang");
-            System.out.println("4. Kembali Ke Beranda");
-
+            System.out.println("=============================================================");
+            System.out.println("|                   Selamat Datang Admin!                   |");
+            System.out.println("=============================================================");
+            System.out.println("|Menu Admin : ");
+            System.out.println("|1. Lihat Cabang");
+            System.out.println("|2. Tambah Cabang");
+            System.out.println("|3. Hapus Cabang");
+            System.out.println("|4. Kembali Ke Beranda");
+            System.out.println("=============================================================");
             int pilihan = input.nextInt();
             switch (pilihan) {
                 case 1 :
@@ -57,28 +59,31 @@ public class Admin {
     }
 
     public static void tambahCabang(){
-        System.out.println("Silahkan Tambah Cabang");
-        System.out.print("Masukan Kode Cabang : ");
+        System.out.println("========================");
+        System.out.println("|Silahkan Tambah Cabang");
+        System.out.println("========================");
+        System.out.print("|Masukan Kode Cabang : ");
         int kodeCabang = input.nextInt();
         input.nextLine();
-        System.out.print("Masukan Nama Cabang : ");
+        System.out.print("|Masukan Nama Cabang : ");
         String namaCabang = input.nextLine();
-        System.out.print("Masukan Alamat Cabang : ");
+        System.out.print("|Masukan Alamat Cabang : ");
         String alamatCabang = input.nextLine();
-        System.out.print("Masukan Banyak Menu Cabang : ");
+        System.out.print("|Masukan Banyak Menu Cabang : ");
         int menuCabang = Integer.parseInt(input.nextLine());
 
         Server listCabang = new Server(kodeCabang,namaCabang,alamatCabang);
         Server.tambahCabang(listCabang);
 
-        System.out.println("\n\t\t\tMenu Ice Cream");
-        System.out.println("Masukan Info Menu Sesuai Dengan Jumlah Banyak Menu!");
+        System.out.println("====================================================");
+        System.out.println("|Masukan Info Menu Sesuai Dengan Jumlah Banyak Menu!");
+        System.out.println("====================================================");
         for (int i = 0; i < menuCabang; i++) {
-            System.out.print("Masukan Kode Menu : ");
+            System.out.print("|Masukan Kode Menu : ");
             String idMenu = input.nextLine();
-            System.out.print("Masukan Nama Menu : ");
+            System.out.print("|Masukan Nama Menu : ");
             String namaMenu = input.nextLine();
-            System.out.print("Masukan Harga Menu : ");
+            System.out.print("|Masukan Harga Menu : ");
             String hargaMenu = input.nextLine();
 
             listCabang.tambahMenu(idMenu, namaMenu, hargaMenu);

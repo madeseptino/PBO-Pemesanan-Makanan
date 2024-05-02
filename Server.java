@@ -92,8 +92,8 @@ public class Server {
     public double hitungTotal (ArrayList<String> menuTerpilih) {
         double total = 0;
 
-        for (String menuTerpilih : menuTertuju) {
-            int index = menu.indexOf(menuTerpilih);
+        for (String menu : menuTerpilih) {
+            int index = menu.indexOf(menu);
             if (index !=-1) {
                 total += harga.get(index);
             }

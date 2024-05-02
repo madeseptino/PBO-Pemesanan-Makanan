@@ -1,10 +1,10 @@
 import java.util.Scanner;
 
 public class Login {
-    private static final String adminUserName = "ADMIN";
-    private static final String adminPassword = "210905";
-    private static final String customerName = "CUSTOMER";
-    private static final String customerPassword = "219050";
+//    private static final String adminUserName = "ADMIN";
+//    private static final String adminPassword = "210905";
+//    private static final String customerName = "CUSTOMER";
+//    private static final String customerPassword = "219050";
 
     public static void login(){
         Scanner scanner = new Scanner(System.in);
@@ -25,21 +25,21 @@ public class Login {
 
     }
 
-    public static String getAdminusername() {
-        return adminUserName;
-    }
-
-    public static String getAdminpassword() {
-        return adminPassword;
-    }
-
-    public static String getCustomername() {
-        return customerName;
-    }
-
-    public static String getCustomerpassword() {
-        return customerPassword;
-    }
+//    public static String getAdminusername() {
+//        return adminUserName;
+//    }
+//
+//    public static String getAdminpassword() {
+//        return adminPassword;
+//    }
+//
+//    public static String getCustomername() {
+//        return customerName;
+//    }
+//
+//    public static String getCustomerpassword() {
+//        return customerPassword;
+//    }
 
 
 }

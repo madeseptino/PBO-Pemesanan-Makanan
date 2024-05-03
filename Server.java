@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class Server {
-//  Menambah Cabang
+    //  Menambah Cabang
     String namaCabang, alamatCabang;
     int idCabang;
     static ArrayList<Server> listCabang = new ArrayList<>();
@@ -37,7 +37,7 @@ public class Server {
     public static int lihatCabang(){
         try {
             listCabang.get(0);
-            System.out.println("Daftar Cabang Asep Ice Cream : ");
+            System.out.println("Daftar Cabang Pudak Restaurant : ");
             for (Server cabang: listCabang){
                 System.out.printf("%d. Cabang %s - %s%n", cabang.getIdCabang(), cabang.getNamaCabang(), cabang.getAlamatCabang());
             }
@@ -52,7 +52,7 @@ public class Server {
         listCabang.remove(idCabang-1);
     }
 
-//  Menu
+    //  Menu
     static ArrayList<String> menu = new ArrayList<>();
 
     public void tambahMenu(String idMenu, String menu, String harga){
@@ -81,7 +81,7 @@ public class Server {
         return harga;
     }
 
-//    fungsi customer
+    //    fungsi customer
     public void lihatMenu(){
         System.out.println("Daftar Menu di " + this.getNamaCabang() + ":");
 

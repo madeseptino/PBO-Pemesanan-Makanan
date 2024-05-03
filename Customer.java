@@ -52,7 +52,6 @@ public class Customer {
                 default:
                     System.out.println("Pilihan Tidak Tersedia!");
                     System.out.print("Masukan Ulang : ");
-
             }
             System.out.println("\nApakah Anda ingin kembali ke menu? (1/2) \n1. Ya\n2. Tidak");
             ulang = input.nextInt();

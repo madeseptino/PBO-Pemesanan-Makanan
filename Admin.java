@@ -17,7 +17,8 @@ public class Admin {
         if ( inputAdminUserName.equals(adminUserName) && inputAdminPassword.equals(adminPassword)){
             menuAdmin();
         } else {
-            System.out.println("Yah Salah Password:(");
+            System.out.println("Username Dan Password Salah! Masukan Ulang!");
+            adminLogin();
         }
     }
 
